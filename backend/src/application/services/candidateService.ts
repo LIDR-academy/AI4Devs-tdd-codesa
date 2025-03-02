@@ -14,7 +14,7 @@ export const addCandidate = async (candidateData: any) => {
     const candidate = new Candidate(candidateData); // Crear una instancia del modelo Candidate
     try {
         const savedCandidate = await candidate.save(); // Guardar el candidato en la base de datos
-        const candidateId = savedCandidate.id; // Obtener el ID del candidato guardado
+        const candidateId = savedCandidate?.id; // Obtener el ID del candidato guardado
 
         // Guardar la educación del candidato
         if (candidateData.educations) {
